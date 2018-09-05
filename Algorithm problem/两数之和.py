@@ -18,7 +18,7 @@ class Solution:
         d = {}
         for x in range(n):
             a = target - nums[x]
-            if nums[x] in d:    #底层hash表实现 时间复杂度O(n)
+            if nums[x] in d:    #底层hash表实现 时间复杂度O(1)
                 return d[nums[x]],x
 
             else:

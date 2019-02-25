@@ -1,6 +1,6 @@
 
 """
-给定一个链表，判断链表中是否有环。
+    给定一个链表，判断链表中是否有环。
 """
 class ListNode(object):
     def __init__(self, x,next=None):

@@ -7,14 +7,17 @@ __author__ = 'Darr_en1'
 
     注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
 """
+
+
 class Solution:
     def maxProfit(self, prices: 'List[int]') -> 'int':
         sum = 0
-        for i in range(len(prices)-1):
-            if prices[i] < prices[i+1]:
-                sum +=prices[i+1]-prices[i]
+        for i in range(len(prices) - 1):
+            if prices[i] < prices[i + 1]:
+                sum += prices[i + 1] - prices[i]
         print(sum)
+
 
 if __name__ == '__main__':
     s = Solution()
-    s.maxProfit([7,1,5,3,6,4])
+    s.maxProfit([7, 1, 5, 3, 6, 4])

@@ -15,11 +15,6 @@ class TreeNode:
         self.left = None
         self.right = None
 
-    def __repr__(self):
-        print(self.val)
-
-    def __str__(self):
-        print(self.val)
 
 class Solution1:
     """
@@ -89,7 +84,7 @@ class Solution2:
             if stack and stack[-1].left == root:
                 root = stack[-1].right
             else:
-                # 没有右子树或右子树遍历完毕，强迫退栈
+                # 没有右子树或右子树遍历完毕，强迫退栈，输出根节点的值
                 root = None
         return re_list
 

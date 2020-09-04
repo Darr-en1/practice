@@ -8,7 +8,7 @@ def reversal(head: ListNode):
     cur = reversal(head.next)
 
     head.next.next = head
-    head.next = None # 防止循环
+    head.next = None  # 防止循环
     return cur
 
 
@@ -26,6 +26,16 @@ def reversal1(head: ListNode):
         pre = cur
         cur = tmp
     return pre
+
+
+def reversal2(head: ListNode):
+    new_head = None
+    while head:
+        tmp = head.next
+        head.next = new_head
+        new_head = head
+        head = tmp
+    return new_head
 
 
 a = list_gen([1, 2, 3, 4, 5, 6, 7])

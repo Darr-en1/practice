@@ -13,7 +13,7 @@ class Solution:
                 j += 1
             else:
                 return numbers[j]
-        return numbers[i]
+        return numbers[0]
 
     def minArray2(self, numbers: List[int]) -> int:
         """:raise

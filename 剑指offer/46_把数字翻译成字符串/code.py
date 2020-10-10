@@ -9,7 +9,6 @@ class Solution:
                 a += 1
                 return
             inner(idx + 1)
-            print(re_str[idx:idx + 2])
             if "10" <= re_str[idx:idx + 2] < "26":
                 inner(idx + 2)
 

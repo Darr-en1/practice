@@ -18,4 +18,5 @@ class Solution:
                 sums -= t.popleft()
         return _all
 
+
 print(Solution().findContinuousSequence(9))

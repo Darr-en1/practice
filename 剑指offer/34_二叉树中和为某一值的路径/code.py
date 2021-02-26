@@ -45,3 +45,18 @@ class Solution:
 
         inner(root, sum)
         return res
+
+    def pathSum1(self, root: TreeNode, sum: int) -> List[List[int]]:
+        res = []
+
+        def inner(_sum, node, temp):
+            if node:
+                _sum -= node.val
+                temp.append(node.val)
+                if node.left is None and node.right is None and _sum == 0:
+                    res.append(temp)
+                inner(_sum, node.left, temp[::])
+                inner(_sum, node.right, temp[::])
+
+        inner(sum, root, [])
+        return res

@@ -14,3 +14,11 @@ class Solution:
             if curr > m:
                 m = curr
         return m
+
+    def maxSubArray1(self, nums: List[int]) -> int:
+        _max = float('-inf')
+        curr = 0
+        for n in nums:
+            curr = max(curr + n, n)
+            _max = max(_max, curr)
+        return _max

@@ -11,15 +11,13 @@ class Solution:
                 return [n, target - n]
 
     def twoSum1(self, nums: List[int], target: int) -> List[int]:
-        a, b = 0, len(nums) - 1
-        while a < b:
-            s = nums[a] + nums[b]
-            if a == target:
-                return [nums[a], nums[b]]
-            elif a > target:
-                b -= 1
+        i, j = 0, len(nums) - 1
+        while nums[i] + nums[j] != target:
+            if nums[i] + nums[j] > target:
+                j -= 1
             else:
-                a += 1
+                i += 1
+        return [nums[i], nums[j]]
 
 
 print(Solution().twoSum1([2, 7, 11, 15] , 9))

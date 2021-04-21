@@ -4,18 +4,16 @@ from collections import deque
 
 class Solution:
     def findContinuousSequence(self, target: int) -> List[List[int]]:
-        t = deque([1, 2])
-        _all = []
-        sums = 3
-        while len(t) > 1 and target > 2:
-            if sums < target:
-                sums += t[-1] + 1
-                t.append(t[-1] + 1)
-            elif sums > target:
-                sums -= t.popleft()
+        i, j, res, _all = 1, 2, 3, []
+        while i < j:
+            if res == target:
+                _all.append(list(range(i, j + 1)))
+            if res >= target:
+                res -= i
+                i += 1
             else:
-                _all.append(list(t))
-                sums -= t.popleft()
+                j += 1
+                res += 1
         return _all
 
 

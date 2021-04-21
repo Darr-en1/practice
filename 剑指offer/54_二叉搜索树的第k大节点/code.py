@@ -10,28 +10,19 @@ class TreeNode:
 
 class Solution:
     def kthLargest(self, root: TreeNode, k: int) -> int:
-        a = []
 
-        def aa(node):
-            if node:
-                aa(node.right)
-                a.append(node.val)
-                aa(node.lefat)
+        def dfs(node):  # 提前返回
+            if not node: return
+            dfs(node.right)
+            self.k -= 1
+            if self.k == 0:
+                self.res = node.val
+                return
+            dfs(node.left)
 
-        aa(root)
-        return a[k - 1]
-
-        # def dfs(root):  提前返回
-        #     if not root: return
-        #     dfs(root.right)
-        #     if self.k == 0: return
-        #     self.k -= 1
-        #     if self.k == 0: self.res = root.val
-        #     dfs(root.left)
-        #
-        # self.k = k
-        # dfs(root)
-        # return self.res
+        self.k = k
+        dfs(root)
+        return self.res
 
 
 print(Solution().kthLargest(arr_to_tree([3, 1, 4, None, 2]), 1))

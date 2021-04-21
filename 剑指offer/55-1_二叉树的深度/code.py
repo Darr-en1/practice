@@ -24,4 +24,4 @@ class Solution:
         return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
 
 
-print(Solution().maxDepth(arr_to_tree([3, 9, 20, None, None, 15, 7])))
+print(Solution().maxDepth1(arr_to_tree([3, 9, 20, None, None, 15, 7])))

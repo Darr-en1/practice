@@ -11,4 +11,4 @@ class Solution:
         return dp[-1]
 
 
-print(Solution().nthUglyNumber(10))
+print(Solution().nthUglyNumber(11))

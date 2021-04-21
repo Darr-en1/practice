@@ -14,5 +14,13 @@ class Solution:
             return n
         return self.fib1(n - 1) + self.fib1(n - 2)
 
+    def fib2(self, n: int):
+        a, b = 0, 1
+        if n:
+            for _ in range(n):
+                a, b = b, a + b
+                yield a
+        else:
+            yield a
 
-print(Solution().fib1(5))
+print([i for i in Solution().fib2(10)])
